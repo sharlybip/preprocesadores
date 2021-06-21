@@ -1,6 +1,14 @@
 -var titulo = "Sub-título Pricipal"
 -var titulos = ["Título Pricipal","Subtitulo 1","Subtitulo 2","Subtitulo 3"]
 -var usuario = "David"
+mixin caja(imagen,titulo,contenido) 
+	.caja 
+		.caja__imagen: img(src="./images/"+imagen, alt="")
+		.caja__contenido 
+			h3=titulo
+			p=contenido
+			a.boton Leer más
+
 doctype html
 html(lang="en")
 	head
@@ -26,6 +34,8 @@ html(lang="en")
 					|	fugit nam voluptatibus repellendus quo quam 
 					span 	cumque debitis assumenda quod esse! Consequuntur?
 				a.boton leer más
-		ul
-			each titulo in titulos 
-				li=titulo
+		main.contenido 
+			+caja('imagen.png',titulos[1],'Lorem ipsum dolor sit amet consectetur ')
+			+caja('imagen.png',titulos[2],'Lorem ipsum dolor sit amet consectetur ')
+			+caja('imagen.png',titulos[3],'Lorem ipsum dolor sit amet consectetur ')
+			
